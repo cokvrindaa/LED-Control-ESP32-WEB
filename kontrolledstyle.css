@@ -1,0 +1,87 @@
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path fill="%23FFF" stroke="%23000" stroke-width="2" d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.35Z"></path></svg>'),
+    auto;
+}
+
+/* Font Popins */
+body {
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --primary: rgb(4, 70, 176);
+}
+span {
+  color: var(--primary);
+  font-weight: bold;
+}
+
+.main-kontainer {
+  max-width: 476px;
+  margin: 0 auto;
+  height: 100vh;
+}
+.main-kontainer .judul {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 50px;
+  flex-direction: column;
+}
+.main-kontainer .judul h1 {
+  font-size: 50px;
+}
+.main-kontainer .judul .navigasi {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+}
+.led-kontrol-kontainer{
+  /* menggunakan gap. */
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 10px;
+  padding: 10px;
+}
+.kotak{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: black solid 2px;
+  border-radius: 20px;
+}
+.kotak img{
+  width: 100px;
+}
+.kotak p{
+  font-weight: bold;
+}
+.led-button {
+  background-color: var(--primary);
+  border-radius: 10px;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+    rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: white;
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path fill="%23FFF" stroke="%23000" stroke-width="2" stroke-linejoin="round" d="M10 11V8.99c0-.88.59-1.64 1.44-1.86h.05A1.99 1.99 0 0 1 14 9.05V12v-2c0-.88.6-1.65 1.46-1.87h.05A1.98 1.98 0 0 1 18 10.06V13v-1.94a2 2 0 0 1 1.51-1.94h0A2 2 0 0 1 22 11.06V14c0 .6-.08 1.27-.21 1.97a7.96 7.96 0 0 1-7.55 6.48 54.98 54.98 0 0 1-4.48 0 7.96 7.96 0 0 1-7.55-6.48C2.08 15.27 2 14.59 2 14v-1.49c0-1.11.9-2.01 2.01-2.01h0a2 2 0 0 1 2.01 2.03l-.01.97v-10c0-1.1.9-2 2-2h0a2 2 0 0 1 2 2V11Z"></path></svg>'),
+    pointer;
+  font-size: 100%;
+  height: 35px;
+  outline: none;
+  padding: 0 25px;
+  text-align: center;
+  transform: translateZ(0);
+  transition: all 0.2s, box-shadow 0.08s ease-in;
+  width: auto;
+}
+
+.led-button:disabled {
+  cursor: default;
+}
+

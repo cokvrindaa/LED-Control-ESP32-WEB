@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Control LED</title>
+    <link rel="stylesheet" href="kontrolledstyle.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main-kontainer">
+      <div class="judul">
+        <h1>Control <span>LED</span></h1>
+        <div class="navigasi">
+            <p>Beranda</p>
+            <p>-</p>
+            <p>Tentang</p>
+        </div>
+      </div>
+      <div class="led-kontrol-kontainer">
+        <div class="kotak">
+          <img src="./image/led-off.png" alt="" class="led-gambar" id="ledgamsatu">
+          <p><span>LED </span>PERTAMA</p>
+          <button class="led-button" id="led-pertama" onclick="ledpertama()">Turn On</button>
+        </div>
+        <div class="kotak">
+          <img src="./image/led-off.png" alt="" class="led-gambar" id="ledgamdua">
+          <p><span>LED</span> KEDUA</p>
+          <button class="led-button" id="led-kedua" onclick="ledkedua()">Turn On</button>
+        </div>
+        <div class="kotak">
+          <img src="./image/led-off.png" alt="" class="led-gambar" id="ledgamtiga">
+          <p><span>LED</span> KETIGA</p>
+          <button class="led-button" id="led-ketiga" onclick="ledketiga()">Turn On</button>
+        </div>
+        <div class="kotak">
+          <img src="./image/led-off.png" alt="" class="led-gambar" id="ledgamempat">
+          <p><span>LED</span> KEEMPAT</p>
+          <button class="led-button" id="led-keempat" onclick="ledkeempat()">Turn On</button>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
