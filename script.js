@@ -1,12 +1,12 @@
 const led1Butt = document.getElementById("led-pertama");
 const led2Butt = document.getElementById("led-kedua");
 const led3Butt = document.getElementById("led-ketiga");
-const led4Butt = document.getElementById("led-keempat");
+const led4Butt = document.getElementById("led4");
 
 const led1gam = document.getElementById("ledgamsatu");
 const led2gam = document.getElementById("ledgamdua");
 const led3gam = document.getElementById("ledgamtiga");
-const led4gam = document.getElementById("ledgamempat");
+const led4gam = document.getElementById("ledgam4");
 
 const endpoint = "http://192.168.171.94";
 const span = document.querySelector("span");
@@ -15,7 +15,7 @@ function getlampupertama() {
   fetch(endpoint + "/lampupertama", {
     method: "GET"
   }).then(response => response.text()).then(result => {
-    if(result == "ON"){
+    if( result == "ON" ){
       led1Butt.style.backgroundColor = "red";
       led1gam.src = "./image/led-on.png";
       span.style.color = "red";
@@ -40,13 +40,13 @@ function getlampukedua() {
     method: "GET"
   }).then(response => response.text()).then(result => {
     if(result == "ON"){
-      led1Butt.style.backgroundColor = "red";
-      led1gam.src = "./image/led-on.png";
+      led2Butt.style.backgroundColor = "red";
+      led2gam.src = "./image/led-on.png";
       span.style.color = "red";
     }
     else{
-      led1Butt.style.backgroundColor = "blue";
-      led1gam.src = "./image/led-off.png";
+      led2Butt.style.backgroundColor = "blue";
+      led2gam.src = "./image/led-off.png";
       span.style.color = "blue";
     }
   })
@@ -64,13 +64,13 @@ function getlampuketiga() {
     method: "GET"
   }).then(response => response.text()).then(result => {
     if(result == "ON"){
-      led1Butt.style.backgroundColor = "red";
-      led1gam.src = "./image/led-on.png";
+      led3Butt.style.backgroundColor = "red";
+      led3gam.src = "./image/led-on.png";
       span.style.color = "red";
     }
     else{
-      led1Butt.style.backgroundColor = "blue";
-      led1gam.src = "./image/led-off.png";
+      led3Butt.style.backgroundColor = "blue";
+      led3gam.src = "./image/led-off.png";
       span.style.color = "blue";
     }
   })
@@ -87,13 +87,13 @@ function getlampukeempat() {
     method: "GET"
   }).then(response => response.text()).then(result => {
     if(result == "ON"){
-      led1Butt.style.backgroundColor = "red";
-      led1gam.src = "./image/led-on.png";
+      led4Butt.style.backgroundColor = "red";
+      led4gam.src = "./image/led-on.png";
       span.style.color = "red";
     }
     else{
-      led1Butt.style.backgroundColor = "blue";
-      led1gam.src = "./image/led-off.png";
+      led4Butt.style.backgroundColor = "blue";
+      led4gam.src = "./image/led-off.png";
       span.style.color = "blue";
     }
   })
@@ -104,6 +104,8 @@ function setlampukeempat() {
   }).then(response => response.text()).then(() => location.reload())
 
 }
+
+
 
 getlampupertama()
 getlampukedua()

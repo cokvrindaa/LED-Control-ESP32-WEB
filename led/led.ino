@@ -9,7 +9,7 @@ const int espLed = 2;
 const int led1 = 19;
 const int led2 = 18;
 const int led3 = 5;
-const int led4 = 4;
+const int led4 = 22;
 
 bool lampupertamastat = false;
 bool lampukeduastat = false;
@@ -41,15 +41,15 @@ void setup() {
   Serial.println(WiFi.localIP());
 
   server.on("/lampupertama", HTTP_GET, getlampupertama);
-  server.on("/lampukedua", HTTP_GET, lampukedua);
-  server.on("/lampuketiga", HTTP_GET, lampuketiga);
-  server.on("/lampukeempat", HTTP_GET, lampukeempat);
+  server.on("/lampukedua", HTTP_GET, getlampukedua);
+  server.on("/lampuketiga", HTTP_GET, getlampuketiga);
+  server.on("/lampukeempat", HTTP_GET, getlampukeempat);
 
 
   server.on("/lampupertama", HTTP_POST, setlampupertama);
-  server.on("/lampukedua", HTTP_POST, lampukedua);
-  server.on("/lampuketiga", HTTP_POST, lampuketiga);
-  server.on("/lampukeempat", HTTP_POST, lampukeempat);
+  server.on("/lampukedua", HTTP_POST, setlampukedua);
+  server.on("/lampuketiga", HTTP_POST, setlampuketiga);
+  server.on("/lampukeempat", HTTP_POST, setlampukeempat);
 
   server.begin();
   Serial.println("server started..");
@@ -67,21 +67,21 @@ void setlampupertama() {
   server.sendHeader("Access-Control-Allow-Origin", "*");
   server.send(200, "text/plain", lampupertamastat ? "ON" : "OFF");
 }
-void lampukedua() {
+void setlampukedua() {
   lampukeduastat = !lampukeduastat;
   // Kalau true high, false low.
   digitalWrite(led2, lampukeduastat ? HIGH : LOW);
   server.sendHeader("Access-Control-Allow-Origin", "*");
   server.send(200, "text/plain", lampukeduastat ? "ON" : "OFF");
 }
-void lampuketiga() {
+void setlampuketiga() {
   lampuketigastat = !lampuketigastat;
   // Kalau true high, false low.
   digitalWrite(led3, lampuketigastat ? HIGH : LOW);
   server.sendHeader("Access-Control-Allow-Origin", "*");
   server.send(200, "text/plain", lampuketigastat ? "ON" : "OFF");
 }
-void lampukeempat() {
+void setlampukeempat() {
   lampukeempatstat = !lampukeempatstat;
   // Kalau true high, false low.
   digitalWrite(led4, lampukeempatstat ? HIGH : LOW);
