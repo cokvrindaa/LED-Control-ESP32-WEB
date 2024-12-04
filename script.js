@@ -7,26 +7,105 @@ const led1gam = document.getElementById("ledgamsatu");
 const led2gam = document.getElementById("ledgamdua");
 const led3gam = document.getElementById("ledgamtiga");
 const led4gam = document.getElementById("ledgamempat");
+
+const endpoint = "http://192.168.171.94";
 const span = document.querySelector("span");
-function ledpertama() {
-  led1Butt.style.backgroundColor = "red";
-  led1gam.src = "./image/led-on.png";
-  span.style.color = "red";
+
+function getlampupertama() {
+  fetch(endpoint + "/lampupertama", {
+    method: "GET"
+  }).then(response => response.text()).then(result => {
+    if(result == "ON"){
+      led1Butt.style.backgroundColor = "red";
+      led1gam.src = "./image/led-on.png";
+      span.style.color = "red";
+    }
+    else{
+      led1Butt.style.backgroundColor = "blue";
+      led1gam.src = "./image/led-off.png";
+      span.style.color = "blue";
+    }
+  })
 }
-function ledkedua() {
-  led2Butt.style.backgroundColor = "red";
-  led2gam.src = "./image/led-on.png";
-  span.style.color = "red";
+function setlampupertama() {
+  fetch(endpoint + "/lampupertama", {
+    method: "POST"
+  }).then(response => response.text()).then(() => location.reload())
+
 }
 
-function ledketiga() {
-  led3Butt.style.backgroundColor = "red";
-  led3gam.src = "./image/led-on.png";
-  span.style.color = "red";
+
+function getlampukedua() {
+  fetch(endpoint + "/lampukedua", {
+    method: "GET"
+  }).then(response => response.text()).then(result => {
+    if(result == "ON"){
+      led1Butt.style.backgroundColor = "red";
+      led1gam.src = "./image/led-on.png";
+      span.style.color = "red";
+    }
+    else{
+      led1Butt.style.backgroundColor = "blue";
+      led1gam.src = "./image/led-off.png";
+      span.style.color = "blue";
+    }
+  })
+}
+function setlampukedua() {
+  fetch(endpoint + "/lampukedua", {
+    method: "POST"
+  }).then(response => response.text()).then(() => location.reload())
+
 }
 
-function ledkeempat() {
-  led4Butt.style.backgroundColor = "red";
-  led4gam.src = "./image/led-on.png";
-  span.style.color = "red";
+
+function getlampuketiga() {
+  fetch(endpoint + "/lampuketiga", {
+    method: "GET"
+  }).then(response => response.text()).then(result => {
+    if(result == "ON"){
+      led1Butt.style.backgroundColor = "red";
+      led1gam.src = "./image/led-on.png";
+      span.style.color = "red";
+    }
+    else{
+      led1Butt.style.backgroundColor = "blue";
+      led1gam.src = "./image/led-off.png";
+      span.style.color = "blue";
+    }
+  })
 }
+function setlampuketiga() {
+  fetch(endpoint + "/lampuketiga", {
+    method: "POST"
+  }).then(response => response.text()).then(() => location.reload())
+
+}
+
+function getlampukeempat() {
+  fetch(endpoint + "/lampukeempat", {
+    method: "GET"
+  }).then(response => response.text()).then(result => {
+    if(result == "ON"){
+      led1Butt.style.backgroundColor = "red";
+      led1gam.src = "./image/led-on.png";
+      span.style.color = "red";
+    }
+    else{
+      led1Butt.style.backgroundColor = "blue";
+      led1gam.src = "./image/led-off.png";
+      span.style.color = "blue";
+    }
+  })
+}
+function setlampukeempat() {
+  fetch(endpoint + "/lampukeempat", {
+    method: "POST"
+  }).then(response => response.text()).then(() => location.reload())
+
+}
+
+getlampupertama()
+getlampukedua()
+getlampuketiga()
+getlampukeempat()
