@@ -1,0 +1,52 @@
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24"><path fill="%23FFF" stroke="%23000" stroke-width="2" d="M5.5 3.21V20.8c0 .45.54.67.85.35l4.86-4.86a.5.5 0 0 1 .35-.15h6.87a.5.5 0 0 0 .35-.85L6.35 2.85a.5.5 0 0 0-.85.35Z"></path></svg>'),
+    auto;
+}
+
+/* Font Popins */
+body {
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --primary: rgb(4, 70, 176);
+}
+span {
+  color: var(--primary);
+  font-weight: bold;
+}
+.main-kontainer {
+  max-width: 500px;
+  margin: 0 auto;
+  height: 100vh;
+  text-align: center;
+}
+.main-kontainer .judul {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 50px;
+  flex-direction: column;
+}
+.main-kontainer .judul h1 {
+  font-size: 50px;
+}
+.main-kontainer .judul .navigasi {
+  display: flex;
+  gap: 20px;
+  font-size: 20px;
+}
+.dhtcontainer {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 50vh;
+}
+.dhtcontainer p {
+  font-size: 40px;
+  font-weight: 600;
+}
